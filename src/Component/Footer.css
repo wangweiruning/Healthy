@@ -1,0 +1,32 @@
+.tab_footer_box{
+    position: fixed;
+    bottom: 0;
+    width:99%;
+    height:2.5rem;
+    list-style: none;
+    background: white;
+    border-top: 1px solid gray;
+    left: 1px;
+    text-align: center;
+    box-shadow: 0px -1px 3px 0px rgba(170, 170, 170, 1);
+    border: 1px solid rgba(187, 187, 187, 1);
+    z-index: 10;
+
+}
+.selected{
+    color: #E4007F;
+}
+.tab_footer_box li{
+    margin-top:0.2rem;
+    display: inline-block;
+    width: 25%;
+    text-align: center;
+    height:0.85rem;
+}
+.tab_footer_box li img{
+    width:1.25rem;
+    height: 1.25rem;
+}
+.tab_footer_box li p{
+    font-size: 0.8rem
+}

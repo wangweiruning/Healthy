@@ -1,0 +1,102 @@
+<!--
+ * @Description: ******************0^0**********************
+ * @Author: wangwei
+ * @Date: 2019-06-04 18:30:26
+ * @LastEditTime: 2019-07-12 11:58:26
+ * @LastEditors: wagnwei
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <title>健康险专栏</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="//res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="keywords" content="健康险专栏-文档浏览" />
+    <meta name="description" content="健康险专栏-文档浏览" />
+    
+    <script>
+        window.wx=wx;
+        console.log("==wx===",wx)
+      //微信分享
+      // window.getTestWxShareConfig = ()=>{
+         
+      // }
+
+
+
+      
+
+      // function wxInit(){
+      //   $.ajax({
+      //       url: `${window.shareImgSrc}/api/wx/sign?url=${encodeURIComponent(url)}`,
+      //       type: "GET",
+      //       dataType: 'json',
+      //       cache: false,
+      //       success: function (json) {
+                
+      //         var config = {};
+      //           config.debug = true;
+      //           config.appId = json.data.appid;
+      //           config.timestamp = json.data.timestamp;
+      //           config.nonceStr = json.data.nonceStr;
+      //           config.signature = json.data.signature;
+      //           config.jsApiList = [// 必填，需要使用的JS接口列表
+      //             'updateAppMessageShareData',
+      //             'updateTimelineShareData',
+      //             'onMenuShareAppMessage',
+      //             'onMenuShareTimeline', 
+      //             'hideOptionMenu'];
+      //           window.wx.config(config);
+      //           wx.ready(function () {
+			
+      //           if(wxShareCache){
+      //                 SetWxShare(wxShareCache[0],wxShareCache[1]);
+      //           }else{
+      //             SetWxShare(defaultShareConfig,defaultShareConfig);
+      //           }
+      //         });
+      //       }
+      //   });
+      // }
+
+      if ('addEventListener' in document) {
+        document.addEventListener('DOMContentLoaded', function() {
+          window.FastClick && FastClick.attach(document.body);
+        }, false);
+      }
+      if(!window.Promise) {
+        document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+      }
+    </script>
+     <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=nNsj2hHmlQjt48iaOhGWGLl0TF5pOPRR"></script>
+     <script type="text/javascript" src="https://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+     <script>
+       window.BMap = BMap
+     </script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <title>健康险专栏</title>
+    
+      
+
+  </head>
+  <body>
+    <noscript>
+      您需要启用JavaScript才能运行。
+    </noscript>
+    <div id="root"></div>
+    <!-- <script src="js/jquery-1.7.2.min.js"></script>
+    <script src="js/wxshare.js"></script> -->
+  </body>
+  <!-- <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?56a1269be78a80d652d588438ef484d9";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script> -->
+</html>

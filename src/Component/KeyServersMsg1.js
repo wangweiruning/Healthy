@@ -100,7 +100,8 @@ class KeyServersMsg1 extends React.Component {
                 iscamp:item.iscamp,
                 isdoc:item.isdoc,
                 isArticle:item.isArticle,
-                id:item.id
+                id:item.id,
+                shareDesc:item.shareDesc
             })
         })
         this.setState({

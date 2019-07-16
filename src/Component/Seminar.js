@@ -19,21 +19,7 @@ import {Link,withRouter} from 'react-router-dom'
     
     componentDidMount() {
         window.scrollTo(0,0)
-        
-        window.getTestWxShareConfig();
-        var a={
-            title:"专家讲堂-详情好友",
-            desc: "专家讲堂-详情好友",
-            link: window.location.href,
-            imgUrl: window.shareImgSrc+"/profile/upload/2019/06/20/29d9795deb4bdd0c254f4d42340b15de.png",
-        }
-        var b={
-            title:"专家讲堂-详情朋友圈",
-            desc: "专家讲堂-详情朋友圈",
-            link: window.location.href,
-            imgUrl: window.shareImgSrc+"/profile/upload/2019/06/20/29d9795deb4bdd0c254f4d42340b15de.png",
-        }
-        window.wxshare(a,b)
+
         localStorage.setItem('pageIdnew',window.returnNewUrl());
         localStorage.setItem('titlenew','专家讲堂');
         localStorage.setItem('readTimenew',new Date().getTime());

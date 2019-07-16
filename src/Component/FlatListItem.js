@@ -35,9 +35,9 @@ class FlatListItem extends React.Component {
           }
         localStorage.setItem("docType",doctype)
         localStorage.setItem('docInfo',JSON.stringify(item));
-        localStorage.setItem("shareName",item.name?item.name:'健康险专栏-保障您的权益')
+        localStorage.setItem("shareName",item.title?item.title:'健康险专栏-保障您的权益')
         localStorage.setItem("shareImg",item.shareImg)
-      
+        localStorage.setItem("shareDesc",item.shareDesc);
 
         if(doctype==3){
             return this.props.history.push({

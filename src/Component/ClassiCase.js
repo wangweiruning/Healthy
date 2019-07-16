@@ -31,21 +31,6 @@ import { Item } from 'antd-mobile/lib/tab-bar';
         this.getData()
         this.getCityData();
         window.scrollTo(0,0)
-
-        // window.getTestWxShareConfig();
-        var a={
-            title:"经典案例-详情好友",
-            desc: "经典案例-详情好友",
-            link: window.location.href,
-            imgUrl: window.shareImgSrc+"/profile/upload/2019/06/20/29d9795deb4bdd0c254f4d42340b15de.png",
-        }
-        var b={
-            title:"经典案例-详情朋友圈",
-            desc: "经典案例-详情朋友圈",
-            link: window.location.href,
-            imgUrl: window.shareImgSrc+"/profile/upload/2019/06/20/29d9795deb4bdd0c254f4d42340b15de.png",
-        }
-        window.wxshare(a,b)
         localStorage.setItem('pageIdnew',window.returnNewUrl());
         localStorage.setItem('titlenew','精选案例');
         localStorage.setItem('readTimenew',new Date().getTime());
@@ -90,6 +75,8 @@ import { Item } from 'antd-mobile/lib/tab-bar';
         }else{
           var productData =  await getCaseData(2);
         }
+
+        console.log(productData,"nnnnnnnnnnnnnnnnnnnnnnn")
         this.setState({
           productData:productData.data
         })
@@ -119,7 +106,10 @@ import { Item } from 'antd-mobile/lib/tab-bar';
        
         localStorage.setItem("docType",doctype)
         localStorage.setItem('docInfo',JSON.stringify(item))
-        localStorage.setItem("shareName",item.name?item.name:'健康险专栏-保障您的权益')
+        localStorage.setItem("shareName",item.title);
+        localStorage.setItem("shareImg",item.shareImg);
+        localStorage.setItem("shareDesc",item.shareDesc);
+        
         if(doctype==3){
           return this.props.history.push({
             pathname:`/Iframe/nameUrl=${encodeURIComponent('http://healthy.relywisdom.com?nameid='+item.id+'&doctype='+doctype+'&docId='+docId)}`,

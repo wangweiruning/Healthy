@@ -4,7 +4,7 @@
  *
  **/
 export const serverUrl = process.env.NODE_ENV === 'production' ?
-  'http://47.98.139.33:4001' :
+  'https://admini.arvate-top.com' :
   'http://47.98.139.33:4001';
 
 export const shareUrl = 'http://cpicaics.abtpt.com/api/abtsystem/outer/doRecord';  

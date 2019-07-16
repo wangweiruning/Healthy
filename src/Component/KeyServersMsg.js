@@ -69,7 +69,8 @@ class KeyServersMsg extends React.Component {
                 iscamp:item.iscamp,
                 isdoc:item.isdoc,
                 isArticle:item.isArticle,
-                id:item.id
+                id:item.id,
+                shareDesc:item.shareDesc
             })
         })
 

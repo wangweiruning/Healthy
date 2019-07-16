@@ -20,8 +20,9 @@ class Spacialflatlist extends React.Component {
     gotunewPage = (item) =>{
         window.pageClick(item.title)
         localStorage.setItem('docInfo',JSON.stringify(item))
-        localStorage.setItem("shareName",item.name?item.name:'健康险专栏-保障您的权益')
+        localStorage.setItem("shareName",item.title)
         localStorage.setItem("shareImg",item.shareImg)
+        localStorage.setItem("shareDesc",item.shareDesc);
         let iscamp = item.iscamp;
         let isdoc =item.isdoc;
         let doctype = 1;

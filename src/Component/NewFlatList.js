@@ -14,9 +14,11 @@ class NewFlatList extends React.Component {
         this.setState({list:nex.flatList})
     }
     gotunewPage = (item) =>{
+        console.log(item,"nnnnnnnnooooooooonnnnnnn")
         localStorage.setItem('docInfo',JSON.stringify(item))
         localStorage.setItem("shareName",item.name)
         localStorage.setItem("shareImg",item.shareImg)
+        localStorage.setItem("shareDesc",item.shareDesc);
         let docId = item.id?item.id:0;
         window.pageClick(item.name)
         let iscamp = item.iscamp;

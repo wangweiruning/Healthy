@@ -277,7 +277,6 @@ window.getTestWxShareConfig = (callbacks) =>{
       dataType: 'json',
       cache: false,
       success: function (json) {
-          
         var config = {};
           config.debug = false;
           config.appId = json.data.appid;
@@ -432,7 +431,9 @@ Date.prototype.Format = function(fmt) {
         if(params.ouserid)localStorage.setItem('ouserId',params.ouserid);
         if(params.suserid)localStorage.setItem('suserId',params.suserid);
     if(params.urlsplit){
-      let href = decodeURIComponent(window.location.href.split('&urlsplit=')[1])+'?backurl='+encodeURIComponent(window.location.href.split('&urlsplit=')[0]);
+      let http_url = window.location.href.split('&urlsplit=')[1];
+          http_url = http_url.split('&from=')[0];
+      let href = decodeURIComponent(http_url)+'?backurl='+encodeURIComponent(window.location.href.split('&urlsplit=')[0]);
       window.location.href = href;
     }
 

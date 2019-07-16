@@ -17,7 +17,7 @@ class Iframe extends React.Component {
     }
     componentDidMount(){
         let paramsnew = window.parseQueryString(decodeURIComponent(window.location.href));
-        
+
         if(paramsnew.userid)localStorage.setItem('userId',paramsnew.userid);
         if(paramsnew.ouserid)localStorage.setItem('ouserId',paramsnew.ouserid);
         if(paramsnew.suserid)localStorage.setItem('suserId',paramsnew.suserid);
@@ -26,9 +26,21 @@ class Iframe extends React.Component {
        let p13no = localStorage.getItem("p13no")?localStorage.getItem("p13no"):'';
        let empno = localStorage.getItem("empno")?localStorage.getItem("empno"):'';
        let shareTime = window.fnDate(new Date().getTime());
-       let title = localStorage.getItem("shareName")?localStorage.getItem("shareName"):"健康险专栏-文档浏览";
-
-       let url = decodeURIComponent(window.location.href).split('.pdf?')[1];
+       let title = localStorage.getItem("shareName");
+       let shareImg = localStorage.getItem("shareImg");
+       let shareDesc = localStorage.getItem("shareDesc");
+       
+        if(title=='undefined'||title=='null'){
+            title ="健康险专栏-文档浏览";
+            }
+        if(shareImg=='undefined'||shareImg=='null'){
+            shareImg ="/profile/upload/2019/06/25/c5da76c7bd245bd893c7a4f990babedb.png";
+        }
+        if(shareDesc=='undefined'||shareDesc=='null'){
+            shareDesc ="健康险专区";
+        }
+           
+        let url = decodeURIComponent(window.location.href).split('.pdf?')[1];
        let params = window.parseQueryString(decodeURIComponent(url));
        let docType = params.doctype;
        let docId = params.docId;
@@ -36,11 +48,12 @@ class Iframe extends React.Component {
        let view = {docId, docType , empno  ,p13no ,shareTime ,title, userid};
 
         window.getTestWxShareConfig(function (){
+           
             var a = {
-                title:  localStorage.getItem("shareName")?localStorage.getItem("shareName"):"健康险专栏-文档浏览",
-                desc:   localStorage.getItem("shareName")?localStorage.getItem("shareName"):"健康险专栏-文档浏览",
+                title:  title,
+                desc:   shareDesc,
                 link:   window.location.href,
-                imgUrl: window.shareImgSrc+"/profile/upload/2019/06/25/c5da76c7bd245bd893c7a4f990babedb.png",
+                imgUrl: window.shareImgSrc+shareImg ,
                 success:async()=>{
     
                    await ClickVIEW(view);
@@ -48,10 +61,10 @@ class Iframe extends React.Component {
                 }
             }
             var b = {
-                title:  localStorage.getItem("shareName")?localStorage.getItem("shareName"):"健康险专栏-文档浏览",
-                desc:   localStorage.getItem("shareName")?localStorage.getItem("shareName"):"健康险专栏-文档浏览",
+                title: title,
+                desc:  shareDesc,
                 link:   window.location.href,
-                imgUrl: window.shareImgSrc+"/profile/upload/2019/06/25/c5da76c7bd245bd893c7a4f990babedb.png",
+                imgUrl: window.shareImgSrc+shareImg,
                 success:async()=>{
                     window.sharePdf("02",docId,title,docId)
                     await ClickVIEW(view);
